@@ -7,7 +7,7 @@
 <meta name="description" content="Bonny Blue of Nevada: a Velocity Blue 2026 Ford Bronco Heritage Edition exploring Nevada and the Southwest backcountry.">
 <meta property="og:title" content="Bonny Blue of Nevada">
 <meta property="og:description" content="A Velocity Blue 2026 Bronco Heritage Edition exploring Nevada and the Southwest.">
-<meta property="og:image" content="https://bonnyblueofnevada.com/img/trail-2026-10-09.jpg">
+<meta property="og:image" content="https://bonnyblueofnevada.com/img/bonny-sun-valley.jpg">
 <meta property="og:url" content="https://bonnyblueofnevada.com/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,9 +40,20 @@ nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,t
 nav .in{max-width:1040px;margin:auto;padding:12px 16px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
 nav .brand{font-family:Bitter,serif;font-weight:800;color:var(--ink);text-decoration:none;margin-right:auto}
 nav a{text-decoration:none;font-weight:600;font-size:15px}
-.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;background:#2a3640 url(img/trail-2026-10-09.jpg) center/cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,16,22,.78),rgba(10,16,22,.05) 60%)}
+.hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;background:#2a3640 url(img/bonny-sun-valley.jpg) 30% 60%/cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,16,22,.80),rgba(10,16,22,.05) 55%)}
 .hero .in{position:relative;z-index:1;max-width:1040px;width:100%;margin:auto;padding:48px 16px;color:#fff}
+@media (min-width:820px){
+  .hero::after{background:linear-gradient(to left,rgba(10,16,22,.72),rgba(10,16,22,.25) 45%,rgba(10,16,22,0) 65%),linear-gradient(to top,rgba(10,16,22,.55),rgba(10,16,22,0) 40%)}
+  .hero .in{text-align:right;padding-left:calc(16px + min(48%, 500px))}
+  .hero p{margin-left:auto}
+}
+@media (max-width:819px){
+  .hero{display:block;min-height:0;background:#141a20}
+  .hero::before{content:"";display:block;aspect-ratio:4/3;background:url(img/bonny-sun-valley.jpg) 25% center/cover}
+  .hero::after{display:none}
+  .hero .in{padding:24px 16px 32px}
+}
 .hero h1{font-size:clamp(40px,8vw,76px);font-weight:800}
 .hero p{font-size:clamp(17px,2.4vw,21px);max-width:36em;margin:0 0 24px;color:#eef2f5}
 .btn{display:inline-block;background:var(--blue);color:var(--blue-ink);padding:11px 20px;border-radius:999px;text-decoration:none;font-weight:600;margin:0 8px 8px 0}
