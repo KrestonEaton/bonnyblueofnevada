@@ -13,80 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#f6f1e7; --surface:#fffaf1; --ink:#1f2a33; --muted:#5b6670; --line:#e2d8c6;
-  --blue:#2b6cb0; --blue-ink:#ffffff; --sand:#c8a46a;
-  --t3:#2b6cb0; --t4:#c0612b; --t5:#2f8f6b;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#141a20; --surface:#1c242c; --ink:#ece6da; --muted:#a3acb5; --line:#2c3640;
-    --blue:#5b9be0; --blue-ink:#0d141a; --sand:#d8b77f;
-    --t3:#6aa8ec; --t4:#f08a50; --t5:#55c49a;
-  }
-}
-:root[data-theme="dark"]{
-    --bg:#141a20; --surface:#1c242c; --ink:#ece6da; --muted:#a3acb5; --line:#2c3640;
-    --blue:#5b9be0; --blue-ink:#0d141a; --sand:#d8b77f;
-    --t3:#6aa8ec; --t4:#f08a50; --t5:#55c49a;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
-a{color:var(--blue)}
-h1,h2,h3{font-family:Bitter,Georgia,serif;line-height:1.15;margin:0 0 .5em}
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .in{max-width:1040px;margin:auto;padding:12px 16px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-nav .brand{font-family:Bitter,serif;font-weight:800;color:var(--ink);text-decoration:none;margin-right:auto}
-nav a{text-decoration:none;font-weight:600;font-size:15px}
-.hero{position:relative;min-height:82vh;display:flex;align-items:flex-end;background:#2a3640 url(img/bonny-sun-valley.jpg) 30% 60%/cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,16,22,.80),rgba(10,16,22,.05) 55%)}
-.hero .in{position:relative;z-index:1;max-width:1040px;width:100%;margin:auto;padding:48px 16px;color:#fff}
-@media (min-width:820px){
-  .hero::after{background:linear-gradient(to left,rgba(10,16,22,.72),rgba(10,16,22,.25) 45%,rgba(10,16,22,0) 65%),linear-gradient(to top,rgba(10,16,22,.55),rgba(10,16,22,0) 40%)}
-  .hero .in{text-align:right;padding-left:calc(16px + min(48%, 500px))}
-  .hero p{margin-left:auto}
-}
-@media (max-width:819px){
-  .hero{display:block;min-height:0;background:#141a20}
-  .hero::before{content:"";display:block;aspect-ratio:4/3;background:url(img/bonny-sun-valley.jpg) 25% center/cover}
-  .hero::after{display:none}
-  .hero .in{padding:24px 16px 32px}
-}
-.hero h1{font-size:clamp(40px,8vw,76px);font-weight:800}
-.hero p{font-size:clamp(17px,2.4vw,21px);max-width:36em;margin:0 0 24px;color:#eef2f5}
-.btn{display:inline-block;background:var(--blue);color:var(--blue-ink);padding:11px 20px;border-radius:999px;text-decoration:none;font-weight:600;margin:0 8px 8px 0}
-.hero .btn{background:#fff;color:#1f2a33}
-.hero .btn.ghost{background:transparent;color:#fff;border:1.5px solid #fff}
-section{max-width:1040px;margin:auto;padding:72px 16px 24px}
-section > p.lead{font-size:19px;color:var(--muted);max-width:40em}
-h2{font-size:clamp(28px,4vw,40px)}
-.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
-.card h3{font-size:20px}
-.values .card p{margin:0}
-.values .n{font-family:Bitter,serif;font-weight:800;color:var(--blue);font-size:15px;margin-bottom:6px}
-dl.spec{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;margin:0}
-dl.spec dt{color:var(--muted)}
-dl.spec dd{margin:0;font-weight:600}
-.trip{display:grid;gap:28px;grid-template-columns:1fr;align-items:start}
-@media (min-width:820px){.trip{grid-template-columns:1.2fr 1fr}}
-.map{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
-.map svg{width:100%;height:auto;max-height:520px;display:block}
-.map polyline{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
-.map .t3{stroke:var(--t3)} .map .t4{stroke:var(--t4)} .map .t5{stroke:var(--t5)}
-.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--muted);margin-top:10px}
-.legend i{display:inline-block;width:18px;height:4px;border-radius:2px;margin-right:6px;vertical-align:middle}
-.tag{display:inline-block;font-size:13px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-bottom:10px}
-ul.clean{padding-left:1.1em;margin:0}
-.follow .grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.follow a.card{display:block;text-decoration:none;color:var(--ink)}
-.follow a.card:hover{border-color:var(--blue)}
-.follow .h{font-family:Bitter,serif;font-weight:800;font-size:19px}
-.follow .s{color:var(--muted);font-size:14px}
-footer{max-width:1040px;margin:48px auto 0;padding:28px 16px 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-</style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 <nav><div class="in">
@@ -112,27 +39,15 @@ footer{max-width:1040px;margin:48px auto 0;padding:28px 16px 48px;border-top:1px
 
 <section id="trips">
   <h2>Trips</h2>
-  <div class="trip">
-    <div>
+  <a class="card tripcard" href="trips/2026-10-09/">
+    <img src="img/trail-2026-10-09.jpg" alt="Two-track trail through sagebrush and pinyon-juniper in central Nevada, October 9, 2026" loading="lazy">
+    <div class="body">
       <span class="tag">October 9, 2026 · Central Nevada</span>
       <h3>SR 839 to Finger Rock Road</h3>
-      <p>We left US 50 between Fallon and Middlegate heading south on <a href="https://en.wikipedia.org/wiki/Nevada_State_Route_839">SR 839</a>. About 15 miles in, we took the Old Cabin Squeeze (Bonny Blue Trail 3) bump-out: roughly 4 miles of narrow two-track east of the highway, tight enough in places that we needed a ground guide, before it dropped us back on SR 839. It was our first time out in a full-width vehicle, so we learned that limit on the fly.</p>
-      <p>From there it was another 1.2 miles south to where the pavement ended, and so too did the official SR 839. Keeping slightly left (southeast) to stay on Ryan Canyon Road for 9.4 miles brought us to what some maps show as the Deadhorse Wells town site.</p>
-      <p>We again stayed left (southeast) onto Rabbit Springs Road, 26 miles to SR 361, then about 7 miles north on 361 to the start of Gabbs Range Traverse (Bonny Blue Trail 4).</p>
-      <p>From SR 361, the Traverse cuts east through the Gabbs Valley Range for 12 miles to Finger Rock Road. About 7 miles in, Washout Canyon Spur (Bonny Blue Trail 4 Spur) climbs, then drops into a canyon over 3.3 miles south. We'd planned to exit through that canyon, which we got through a few years ago in a smaller vehicle. It has since washed out, and as of October 2026 full-size 4x4s can't get through, so we turned around and went back to the Traverse.</p>
-      <p>Where the Traverse ends at Finger Rock Road, you have options. North takes you back toward SR 361 and Gabbs. South, a few miles on, Finger Rock Road meets Dump Run Road. Turn west there to stay on maintained dirt to US 95 near Mina. That's how we got out, 18 miles from the end of the trail. Turn east instead for Gabbs Pole Line Road, the longest way out.</p>
-      <p>We turned off US 50 onto SR 839 right where the <a href="https://battleborntrail.com/the-trail-system">1861 Trail</a> passes. It's one of the Nevada Offroad Association's Battle Born Trail System routes, and we didn't know about it at the time, so it's on the list for next time. The way out toward Mina also comes close to their Battle Born Trail.</p>
-      <p>Find all three on onX, posted by Bonny Blue of Nevada: Old Cabin Squeeze, Gabbs Range Traverse and Washout Canyon Spur.</p>
+      <p>Old Cabin Squeeze, Gabbs Range Traverse and Washout Canyon Spur.</p>
+      <span class="more">Read the trip and find the trails →</span>
     </div>
-    <figure class="map" style="margin:0">
-      <a href="img/trail4-detail-map.jpg"><img src="img/trail4-detail-map.jpg" alt="Terrain map of Gabbs Range Traverse and Washout Canyon Spur in the Gabbs Valley Range, with mile marks, the washout turnaround and elevation profiles" style="width:100%;height:auto;display:block;border-radius:8px"></a>
-      <figcaption class="legend">Gabbs Range Traverse (Bonny Blue Trail 4) and Washout Canyon Spur (Bonny Blue Trail 4 Spur) on terrain. Tap to enlarge.</figcaption>
-    </figure>
-  </div>
-  <figure class="map" style="margin:28px 0 0">
-    <a href="img/route-map-2026-10-09.png"><img src="img/route-map-2026-10-09.png" alt="Map of the October 9, 2026 route: SR 839 south from US 50, Old Cabin Squeeze, Ryan Canyon and Rabbit Springs roads to SR 361 (with US 50, SR 361, US 95 and the 1861 and Battle Born Trails shown), then Gabbs Range Traverse and Washout Canyon Spur to Finger Rock Road" style="width:100%;height:auto;display:block;border-radius:8px"></a>
-    <figcaption class="legend">The full route in the context of Nevada, with the nearby 1861 and Battle Born Trails. Tap to enlarge. 1861 and Battle Born Trails: Source: Nevada Offroad Association — Battle Born Trail® | <a href="https://battleborntrail.com/">BattleBornTrail.com</a></figcaption>
-  </figure>
+  </a>
 </section>
 
 <section id="rig">
